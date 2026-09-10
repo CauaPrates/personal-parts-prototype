@@ -56,7 +56,7 @@ export function ProductFilters({ filtros, onChange, onReset, resultCount }: Prod
         <select
           value={filtros.marca}
           onChange={(e) => onChange({ ...filtros, marca: e.target.value })}
-          className="mt-3 w-full rounded border border-ink-500 bg-ink-900 px-3 py-2 text-sm text-white focus:border-racing focus:outline-none"
+          className="mt-3 w-full rounded border border-ink-500 bg-ink-900 px-3 py-2 text-sm text-white focus:border-verde focus:outline-none"
         >
           <option value="">Todas as marcas</option>
           {listaMarcas.map((m) => (
@@ -99,7 +99,7 @@ export function ProductFilters({ filtros, onChange, onReset, resultCount }: Prod
           step={100}
           value={filtros.precoMax}
           onChange={(e) => onChange({ ...filtros, precoMax: Number(e.target.value) })}
-          className="mt-4 w-full accent-racing"
+          className="mt-4 w-full accent-verde"
         />
       </div>
 
@@ -128,7 +128,7 @@ function FilterOption({
       className={cn(
         'rounded border px-3 py-1.5 text-left text-sm transition-colors',
         active
-          ? 'border-racing bg-racing-50 text-racing-400'
+          ? 'border-verde bg-verde-50 text-verde'
           : 'border-ink-600 text-silver-300 hover:border-ink-500 hover:text-white',
       )}
     >

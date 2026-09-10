@@ -16,9 +16,9 @@ import { cn } from '../../lib/utils';
 export function DiagonalTricolor({ className }: { className?: string }) {
   return (
     <div className={cn('overflow-hidden', className)} aria-hidden="true">
-      <span className="absolute top-[-20%] left-0 h-[140%] w-[16%] -skew-x-[20deg] bg-verde" />
-      <span className="absolute top-[-20%] left-[14%] h-[140%] w-[8%] -skew-x-[20deg] bg-silver" />
-      <span className="absolute top-[-20%] left-[20%] h-[140%] w-[20%] -skew-x-[20deg] bg-racing" />
+      <span className="absolute top-[-20%] left-0 h-[140%] w-[14%] -skew-x-[20deg] bg-verde-diagonal" />
+      <span className="absolute top-[-20%] left-[15%] h-[140%] w-[14%] -skew-x-[20deg] bg-silver-diagonal" />
+      <span className="absolute top-[-20%] left-[30%] h-[140%] w-[14%] -skew-x-[20deg] bg-racing" />
     </div>
   );
 }

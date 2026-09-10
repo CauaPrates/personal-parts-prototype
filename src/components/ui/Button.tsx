@@ -8,15 +8,15 @@ const base =
   'inline-flex items-center justify-center gap-2 font-display font-semibold uppercase tracking-wide2 transition-all duration-200 ease-sharp disabled:opacity-50 disabled:pointer-events-none';
 
 const variants: Record<Variant, string> = {
-  primary: 'bg-racing text-white hover:bg-racing-600 hover:shadow-glow',
+  primary: 'bg-verde text-white hover:bg-verde-600 hover:shadow-glow',
   secondary:
-    'border border-ink-500 text-white hover:border-racing hover:text-racing-400 bg-transparent',
+    'border border-ink-500 text-white hover:border-verde hover:text-verde bg-transparent',
   ghost: 'text-silver-300 hover:text-white',
 };
 
 const sizes: Record<Size, string> = {
-  md: 'px-5 py-2.5 text-sm rounded',
-  lg: 'px-7 py-3.5 text-base rounded',
+  md: 'px-5 py-2.5 text-sm rounded-md',
+  lg: 'px-7 py-3.5 text-base rounded-md',
 };
 
 type CommonProps = {

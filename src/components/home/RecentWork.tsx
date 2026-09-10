@@ -18,7 +18,7 @@ export function RecentWork() {
           />
           <Link
             to="/trabalhos"
-            className="flex shrink-0 items-center gap-2 font-display text-sm font-semibold uppercase tracking-wide2 text-racing-400 hover:text-racing-400/80"
+            className="flex shrink-0 items-center gap-2 font-display text-sm font-semibold uppercase tracking-wide2 text-verde hover:text-verde-600"
           >
             Ver portfólio completo
             <ArrowRight className="h-4 w-4" />

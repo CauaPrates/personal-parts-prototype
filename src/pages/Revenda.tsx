@@ -152,7 +152,7 @@ export function Revenda() {
 }
 
 const inputClasses =
-  'w-full rounded border border-ink-500 bg-ink-900 px-4 py-2.5 text-sm text-white placeholder:text-silver-400 focus:border-racing focus:outline-none';
+  'w-full rounded border border-ink-500 bg-ink-900 px-4 py-2.5 text-sm text-white placeholder:text-silver-400 focus:border-verde focus:outline-none';
 
 function Field({ label, required, children }: { label: string; required?: boolean; children: ReactNode }) {
   return (

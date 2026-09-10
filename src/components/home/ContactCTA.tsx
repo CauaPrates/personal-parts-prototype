@@ -5,7 +5,6 @@ import { buildWhatsAppLink } from '../../lib/utils';
 export function ContactCTA() {
   return (
     <section className="relative overflow-hidden bg-ink-900 py-20">
-      <div className="diagonal-divider absolute inset-0 opacity-[0.04]" />
       <div className="container-px relative mx-auto max-w-4xl text-center">
         <h2 className="text-3xl font-bold leading-tight text-balance sm:text-4xl">
           Seu carro, sua identidade. Vamos conversar sobre o próximo projeto?

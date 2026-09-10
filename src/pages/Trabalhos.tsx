@@ -54,7 +54,7 @@ function FilterPill({ label, active, onClick }: { label: string; active: boolean
       onClick={onClick}
       className={
         active
-          ? 'rounded-full border border-racing bg-racing-50 px-4 py-1.5 text-sm text-racing-400'
+          ? 'rounded-full border border-verde bg-verde-50 px-4 py-1.5 text-sm text-verde'
           : 'rounded-full border border-ink-600 px-4 py-1.5 text-sm text-silver-300 hover:border-ink-500 hover:text-white'
       }
     >

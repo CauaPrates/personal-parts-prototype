@@ -94,7 +94,7 @@ export function ProdutoDetalhe() {
               Solicitar orçamento via WhatsApp
             </Button>
             <Button size="lg" variant="secondary" onClick={() => toggle(produto)}>
-              <Heart className={cn('h-4 w-4', active && 'fill-current text-racing-400')} />
+              <Heart className={cn('h-4 w-4', active && 'fill-current text-verde')} />
               {active ? 'Na lista de interesse' : 'Adicionar à lista de interesse'}
             </Button>
           </div>

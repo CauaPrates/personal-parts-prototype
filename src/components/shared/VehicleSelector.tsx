@@ -11,7 +11,7 @@ type VehicleSelectorProps = {
 };
 
 const selectClasses =
-  'w-full appearance-none rounded border border-ink-500 bg-ink-900 px-4 py-3 text-sm text-white focus:border-racing focus:outline-none disabled:opacity-40';
+  'w-full appearance-none rounded border border-ink-500 bg-ink-900 px-4 py-3 text-sm text-white focus:border-verde focus:outline-none disabled:opacity-40';
 
 export function VehicleSelector({ variant = 'full', onNavigate }: VehicleSelectorProps) {
   const [marca, setMarca] = useState('');

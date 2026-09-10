@@ -31,7 +31,7 @@ export function ProductCard({ produto }: { produto: Produto }) {
         onClick={() => toggle(produto)}
         className={cn(
           'absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur transition-colors',
-          active ? 'bg-racing text-white' : 'bg-black/40 text-white hover:bg-black/60',
+          active ? 'bg-verde text-white' : 'bg-black/40 text-white hover:bg-black/60',
         )}
         aria-label="Adicionar à lista de interesse"
       >
@@ -47,7 +47,7 @@ export function ProductCard({ produto }: { produto: Produto }) {
           <Badge variant="outline">{produto.fabricacao}</Badge>
         </div>
         <Link to={`/produtos/${produto.slug}`}>
-          <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-racing-400">
+          <h3 className="font-display text-lg font-semibold text-white transition-colors group-hover:text-verde">
             {produto.nome}
           </h3>
         </Link>
@@ -60,7 +60,7 @@ export function ProductCard({ produto }: { produto: Produto }) {
           </span>
           <Link
             to={`/produtos/${produto.slug}`}
-            className="font-display text-xs font-semibold uppercase tracking-wide2 text-racing-400 hover:text-racing-400/80"
+            className="font-display text-xs font-semibold uppercase tracking-wide2 text-verde hover:text-verde-600"
           >
             Ver detalhes →
           </Link>

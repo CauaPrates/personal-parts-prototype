@@ -49,10 +49,10 @@ export function BeforeAfterSlider({
       </div>
 
       <div
-        className="absolute top-0 h-full w-0.5 bg-racing"
+        className="absolute top-0 h-full w-0.5 bg-verde"
         style={{ left: `${position}%` }}
       >
-        <div className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-racing text-white shadow-glow">
+        <div className="absolute left-1/2 top-1/2 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-verde text-white shadow-glow">
           <MoveHorizontal className="h-4 w-4" />
         </div>
       </div>
@@ -60,7 +60,7 @@ export function BeforeAfterSlider({
       <span className="absolute left-3 top-3 rounded bg-black/60 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-silver-300">
         Antes
       </span>
-      <span className="absolute right-3 top-3 rounded bg-racing/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-white">
+      <span className="absolute right-3 top-3 rounded bg-verde/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide2 text-white">
         Depois
       </span>
     </div>

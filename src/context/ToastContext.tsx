@@ -37,7 +37,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               transition={{ duration: 0.2, ease: 'easeOut' }}
               className="flex max-w-xs items-start gap-3 rounded-lg border border-ink-600 bg-ink-800 px-4 py-3 shadow-card sm:max-w-sm"
             >
-              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-racing-400" />
+              <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-verde" />
               <p className="text-sm text-silver-300">{toast.message}</p>
               <button
                 onClick={() => dismiss(toast.id)}

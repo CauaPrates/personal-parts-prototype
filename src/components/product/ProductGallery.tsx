@@ -18,7 +18,7 @@ export function ProductGallery({ imagens, nome }: { imagens: string[]; nome: str
               onClick={() => setActive(i)}
               className={cn(
                 'h-16 w-20 shrink-0 overflow-hidden rounded border-2 transition-colors',
-                active === i ? 'border-racing' : 'border-ink-600 hover:border-ink-500',
+                active === i ? 'border-verde' : 'border-ink-600 hover:border-ink-500',
               )}
               aria-label={`Ver imagem ${i + 1} de ${nome}`}
             >

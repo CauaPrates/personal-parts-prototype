@@ -1,34 +1,22 @@
-import { BrandMark } from '../ui/BrandMark';
-import { CarBlueprint } from '../ui/CarBlueprint';
 import { cn } from '../../lib/utils';
 
 /**
- * Fundo do hero: composição escura e dramática (luz única forte + sombra
- * pesada) no clima do hero fotográfico do board de marca — sem usar foto real
- * (não temos direito de uso de fotos reais dos carros da Personal Parts),
- * então o símbolo oficial da marca faz esse papel, com o mesmo contraste e
- * recorte diagonal tricolor no canto.
+ * Fundo do hero: foto real do carro (fornecida pelo usuário, com a faixa
+ * tricolor já embutida na borda direita). A imagem preenche a altura e a
+ * borda direita inteiras (full-bleed, sem "caixa" flutuando no meio do
+ * hero); `object-cover` + `object-right` garante que topo, base e direita
+ * encostem nas bordas do hero sem faixas de fundo sobrando. Um `mask-image`
+ * em gradiente faz a imagem "nascer da escuridão" na borda esquerda, se
+ * fundindo com o fundo `bg-void` do hero em vez de cortar de forma dura.
  */
 export function HeroVisual({ className }: { className?: string }) {
   return (
-    <div className={cn('relative overflow-hidden bg-ink-950', className)}>
-      {/* base quase preta, com leve gradiente pra dar profundidade */}
-      <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-950 to-black" />
-
-      {/* esboço técnico do carro, bem sutil, ecoando o elemento gráfico do board */}
-      <CarBlueprint className="absolute right-[-4%] top-1/2 h-[52%] w-auto -translate-y-1/2 text-white/[0.04]" />
-
-      {/* luz única forte, tipo estúdio/farol, vindo de trás do símbolo */}
-      <div className="absolute right-[8%] top-1/2 h-[70%] w-[30%] -translate-y-1/2 rounded-full bg-white/10 blur-[110px]" />
-      <div className="absolute right-0 top-1/2 h-[90%] w-2/5 -translate-y-1/2 rounded-full bg-racing/35 blur-[100px]" />
-
-      <BrandMark
-        className="absolute right-[4%] top-1/2 h-auto w-[42%] -translate-y-1/2 drop-shadow-[0_30px_50px_rgba(0,0,0,0.8)] sm:w-[34%]"
+    <div className={cn('relative overflow-hidden bg-void', className)}>
+      <img
+        src="/brand/hero-car.png"
+        alt=""
+        className="absolute right-0 top-0 h-full w-[65%] object-cover object-right [mask-image:linear-gradient(to_right,transparent,black_35%)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_35%)] sm:w-[55%]"
       />
-
-      {/* vinheta pesada nas bordas, pro clima "estúdio fotográfico" */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
-      <div className="absolute inset-0 shadow-[inset_0_0_120px_60px_rgba(0,0,0,0.7)]" />
     </div>
   );
 }

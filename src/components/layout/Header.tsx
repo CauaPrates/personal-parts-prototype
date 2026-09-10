@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Heart, Menu, MessageCircle, Search, X } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { VehicleSelector } from '../shared/VehicleSelector';
-import { BrandMark } from '../ui/BrandMark';
 import { cn } from '../../lib/utils';
 import { buildWhatsAppLink } from '../../lib/utils';
 
@@ -22,18 +21,21 @@ export function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const { count } = useWishlist();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-800 bg-ink-950/90 backdrop-blur">
-      <div className="container-px mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 lg:h-20">
-        <button
-          onClick={() => navigate('/')}
-          className="flex shrink-0 items-center gap-3"
-        >
-          <BrandMark className="h-9 w-auto sm:h-10" />
-          <span className="hidden font-display text-lg font-bold uppercase tracking-wide2 text-white sm:inline sm:text-xl">
-            Personal Parts
-          </span>
+    <header
+      className={cn(
+        'z-50',
+        isHome
+          ? 'fixed inset-x-0 top-0 bg-gradient-to-b from-void via-void/70 to-transparent'
+          : 'sticky top-0 bg-void',
+      )}
+    >
+      <div className="container-px mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 lg:h-28">
+        <button onClick={() => navigate('/')} className="flex shrink-0 items-center xl:mr-10 2xl:mr-20">
+          <img src="/brand/logo-header.png" alt="Personal Parts" className="h-16 w-auto sm:h-20 lg:h-24" />
         </button>
 
         <nav className="hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-7">
@@ -63,7 +65,7 @@ export function Header() {
           <div className="relative hidden shrink-0 md:block">
             <button
               onClick={() => setSearchOpen((v) => !v)}
-              className="flex items-center gap-2 whitespace-nowrap rounded border border-ink-500 px-3 py-2 text-sm text-silver-300 hover:border-racing hover:text-white"
+              className="flex items-center gap-2 whitespace-nowrap rounded border border-ink-500 px-3 py-2 text-sm text-silver-300 hover:border-verde hover:text-white"
             >
               <Search className="h-4 w-4 shrink-0" />
               <span className="hidden 2xl:inline">Buscar peça</span>
@@ -100,7 +102,7 @@ export function Header() {
             href={buildWhatsAppLink('Olá! Vim pelo site e gostaria de mais informações.')}
             target="_blank"
             rel="noreferrer"
-            className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded bg-racing px-3 py-2 font-display text-sm font-semibold uppercase tracking-wide2 text-white hover:bg-racing-600 md:flex"
+            className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded bg-verde px-3 py-2 font-display text-sm font-semibold uppercase tracking-wide2 text-white hover:bg-verde-600 md:flex"
           >
             <MessageCircle className="h-4 w-4" />
             WhatsApp
@@ -175,7 +177,7 @@ export function Header() {
                 href={buildWhatsAppLink('Olá! Vim pelo site e gostaria de mais informações.')}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-auto flex items-center justify-center gap-2 rounded bg-racing px-4 py-3 font-display text-sm font-semibold uppercase tracking-wide2 text-white"
+                className="mt-auto flex items-center justify-center gap-2 rounded bg-verde px-4 py-3 font-display text-sm font-semibold uppercase tracking-wide2 text-white"
               >
                 <MessageCircle className="h-4 w-4" />
                 Falar no WhatsApp

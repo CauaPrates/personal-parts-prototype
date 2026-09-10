@@ -37,17 +37,6 @@
 }
 
 @layer components {
-  /* Linha diagonal fina reutilizada como separador gráfico "tuning" */
-  .diagonal-divider {
-    background: repeating-linear-gradient(
-      -60deg,
-      theme('colors.racing.DEFAULT') 0,
-      theme('colors.racing.DEFAULT') 24px,
-      transparent 24px,
-      transparent 40px
-    );
-  }
-
   .container-px {
     @apply px-4 sm:px-6 lg:px-10;
   }
