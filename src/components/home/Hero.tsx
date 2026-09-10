@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { SinceBadge } from '../ui/SinceBadge';
+import { DiagonalTricolor } from '../ui/DiagonalTricolor';
 import { HeroVisual } from './HeroVisual';
 
 export function Hero() {
@@ -20,6 +21,7 @@ export function Hero() {
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/70 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-ink-950 via-transparent to-ink-950/30" />
+      <DiagonalTricolor className="absolute bottom-0 right-0 z-10 h-24 w-40 opacity-90 sm:h-32 sm:w-56" />
 
       <div className="container-px relative mx-auto max-w-7xl py-24">
         <motion.div

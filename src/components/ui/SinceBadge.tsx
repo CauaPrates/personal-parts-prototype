@@ -42,16 +42,16 @@ export function SinceBadge({ className, year = '1997' }: { className?: string; y
       <circle cx="148" cy="63" r="2" fill="#6b7078" />
 
       <path d="M50,16 L150,16" stroke="#8b8f97" strokeWidth={1} opacity={0.5} />
-      <rect x="30" y="39" width="140" height="6" fill="#e2001a" />
+      <rect x="30" y="39" width="140" height="6" fill="#D71920" />
 
       <text
         x="100"
         y="34"
         textAnchor="middle"
-        fontFamily="'Rajdhani', sans-serif"
+        fontFamily="'Montserrat', sans-serif"
         fontWeight={700}
         fontSize="15"
-        fill="#e4e6ea"
+        fill="#D4D5D7"
         letterSpacing="2"
       >
         DESDE
@@ -60,7 +60,7 @@ export function SinceBadge({ className, year = '1997' }: { className?: string; y
         x="100"
         y="62"
         textAnchor="middle"
-        fontFamily="'Rajdhani', sans-serif"
+        fontFamily="'Montserrat', sans-serif"
         fontWeight={700}
         fontSize="20"
         fill="#ffffff"

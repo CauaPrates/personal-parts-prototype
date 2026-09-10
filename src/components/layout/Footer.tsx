@@ -2,22 +2,31 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import { InstagramIcon, FacebookIcon, YoutubeIcon } from '../ui/SocialIcons';
 import { BrandMark } from '../ui/BrandMark';
-import { TricolorAccent } from '../ui/TricolorAccent';
+import { DiagonalTricolor } from '../ui/DiagonalTricolor';
+import { SinceBadge } from '../ui/SinceBadge';
 
 export function Footer() {
   return (
     <footer className="bg-ink-900">
-      <TricolorAccent />
-      <div className="container-px mx-auto max-w-7xl border-t border-ink-700 py-14">
+      <div className="relative overflow-hidden border-b border-ink-800 bg-ink-950">
+        <div className="container-px relative z-10 mx-auto flex h-20 max-w-7xl items-center gap-3">
+          <BrandMark className="h-8 w-auto" />
+          <div className="leading-tight">
+            <div className="font-display text-base font-bold uppercase tracking-wide2 text-white sm:text-lg">
+              Personal Parts
+            </div>
+            <div className="font-display text-[10px] font-semibold uppercase tracking-wide3 text-silver-400">
+              Performance Automotive
+            </div>
+          </div>
+        </div>
+        <DiagonalTricolor className="absolute right-0 top-0 h-full w-32 sm:w-56" />
+      </div>
+
+      <div className="container-px mx-auto max-w-7xl py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="flex items-center gap-2.5">
-              <BrandMark className="h-8 w-auto" withFlag={false} />
-              <span className="text-chrome font-display text-lg font-bold uppercase tracking-wide2">
-                Personal Parts
-              </span>
-            </span>
-            <p className="mt-4 text-sm text-silver-400">
+            <p className="text-sm text-silver-400">
               Acessórios aerodinâmicos personalizados desde 1997. Design nacional, fabricação
               própria em fibra de vidro, PU e ABS.
             </p>
@@ -32,18 +41,6 @@ export function Footer() {
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
-            </div>
-            <div className="mt-6 flex items-center gap-3">
-              <div className="flex h-14 items-center rounded bg-silver-300 px-2.5">
-                <img
-                  src="/brand/selo-marca-brasil.png"
-                  alt="Selo Troféu Marca Brasil"
-                  className="h-10 w-auto"
-                />
-              </div>
-              <p className="max-w-[9rem] text-[11px] leading-snug text-silver-400">
-                Reconhecida com o Troféu Marca Brasil
-              </p>
             </div>
           </div>
 
@@ -92,7 +89,24 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-ink-700 pt-6 text-xs text-silver-400 sm:flex-row">
+        <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-ink-700 pt-8">
+          <SinceBadge className="h-14 w-auto" />
+
+          <div className="flex items-center gap-3">
+            <div className="flex h-14 items-center rounded bg-silver-300 px-2.5">
+              <img
+                src="/brand/selo-marca-brasil.png"
+                alt="Selo Troféu Marca Brasil"
+                className="h-10 w-auto"
+              />
+            </div>
+            <p className="max-w-[9rem] text-[11px] leading-snug text-silver-400">
+              Reconhecida com o Troféu Marca Brasil
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-ink-700 pt-6 text-xs text-silver-400 sm:flex-row">
           <span>© {new Date().getFullYear()} Personal Parts. Desde 1997. Todos os direitos reservados.</span>
           <span>Protótipo de demonstração — dados e imagens ilustrativos.</span>
         </div>

@@ -5,7 +5,6 @@ import { Heart, Menu, MessageCircle, Search, X } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { VehicleSelector } from '../shared/VehicleSelector';
 import { BrandMark } from '../ui/BrandMark';
-import { TricolorAccent } from '../ui/TricolorAccent';
 import { cn } from '../../lib/utils';
 import { buildWhatsAppLink } from '../../lib/utils';
 
@@ -25,19 +24,19 @@ export function Header() {
   const navigate = useNavigate();
 
   return (
-    <header className="sticky top-0 z-50 bg-ink-950/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-ink-800 bg-ink-950/90 backdrop-blur">
       <div className="container-px mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 lg:h-20">
         <button
           onClick={() => navigate('/')}
           className="flex shrink-0 items-center gap-3"
         >
           <BrandMark className="h-9 w-auto sm:h-10" />
-          <span className="text-chrome font-display text-lg font-bold uppercase tracking-wide2 sm:text-xl">
+          <span className="hidden font-display text-lg font-bold uppercase tracking-wide2 text-white sm:inline sm:text-xl">
             Personal Parts
           </span>
         </button>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden shrink-0 items-center gap-5 xl:flex 2xl:gap-7">
           {NAV_LINKS.map((link) => (
             <NavLink
               key={link.to}
@@ -45,24 +44,29 @@ export function Header() {
               end={link.to === '/'}
               className={({ isActive }) =>
                 cn(
-                  'font-display text-sm font-semibold uppercase tracking-wide2 transition-colors',
-                  isActive ? 'text-racing-400' : 'text-silver-300 hover:text-white',
+                  'relative inline-block pb-1.5 font-display text-sm font-semibold uppercase tracking-wide2 transition-colors',
+                  isActive ? 'text-white' : 'text-silver-300 hover:text-white',
                 )
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  {isActive && <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-verde" />}
+                </>
+              )}
             </NavLink>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="relative hidden sm:block">
+        <div className="flex items-center gap-2">
+          <div className="relative hidden shrink-0 md:block">
             <button
               onClick={() => setSearchOpen((v) => !v)}
-              className="flex items-center gap-2 rounded border border-ink-500 px-3 py-2 text-sm text-silver-300 hover:border-racing hover:text-white"
+              className="flex items-center gap-2 whitespace-nowrap rounded border border-ink-500 px-3 py-2 text-sm text-silver-300 hover:border-racing hover:text-white"
             >
-              <Search className="h-4 w-4" />
-              <span className="hidden md:inline">Encontre peças para o seu carro</span>
+              <Search className="h-4 w-4 shrink-0" />
+              <span className="hidden 2xl:inline">Buscar peça</span>
             </button>
             <AnimatePresence>
               {searchOpen && (
@@ -81,7 +85,7 @@ export function Header() {
 
           <button
             onClick={() => navigate('/produtos')}
-            className="relative flex h-9 w-9 items-center justify-center rounded text-silver-300 hover:text-white"
+            className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded text-silver-300 hover:text-white"
             aria-label="Lista de interesse"
           >
             <Heart className="h-5 w-5" />
@@ -96,7 +100,7 @@ export function Header() {
             href={buildWhatsAppLink('Olá! Vim pelo site e gostaria de mais informações.')}
             target="_blank"
             rel="noreferrer"
-            className="hidden items-center gap-2 rounded bg-racing px-4 py-2 font-display text-sm font-semibold uppercase tracking-wide2 text-white hover:bg-racing-600 sm:flex"
+            className="hidden shrink-0 items-center gap-2 whitespace-nowrap rounded bg-racing px-3 py-2 font-display text-sm font-semibold uppercase tracking-wide2 text-white hover:bg-racing-600 md:flex"
           >
             <MessageCircle className="h-4 w-4" />
             WhatsApp
@@ -104,7 +108,7 @@ export function Header() {
 
           <button
             onClick={() => setMobileOpen(true)}
-            className="flex h-9 w-9 items-center justify-center text-white lg:hidden"
+            className="flex h-9 w-9 items-center justify-center text-white xl:hidden"
             aria-label="Abrir menu"
           >
             <Menu className="h-6 w-6" />
@@ -112,15 +116,13 @@ export function Header() {
         </div>
       </div>
 
-      <TricolorAccent />
-
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/70 lg:hidden"
+            className="fixed inset-0 z-50 bg-black/70 xl:hidden"
             onClick={() => setMobileOpen(false)}
           >
             <motion.div
@@ -147,12 +149,17 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                     className={({ isActive }) =>
                       cn(
-                        'font-display text-lg font-semibold uppercase tracking-wide2',
-                        isActive ? 'text-racing-400' : 'text-silver-300',
+                        'relative inline-block w-fit pb-1 font-display text-lg font-semibold uppercase tracking-wide2',
+                        isActive ? 'text-white' : 'text-silver-300',
                       )
                     }
                   >
-                    {link.label}
+                    {({ isActive }) => (
+                      <>
+                        {link.label}
+                        {isActive && <span className="absolute -bottom-0.5 left-0 h-0.5 w-full bg-verde" />}
+                      </>
+                    )}
                   </NavLink>
                 ))}
               </nav>

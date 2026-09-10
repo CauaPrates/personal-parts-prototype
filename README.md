@@ -41,18 +41,22 @@ Os tipos de cada entidade estão em `src/types/index.ts`.
 
 ## Identidade visual
 
-A marca (logo, "Desde 1997", tricolor italiano) foi recriada a partir do site
-atual (`personalparts.com.br`), não inventada do zero:
+O protótipo usa a marca oficial aprovada em `personal-parts-brand-assets/`
+(monograma "PP", paleta e tipografia — ver o `README.md` dessa pasta):
 
-- `src/components/ui/BrandMark.tsx` — recriação vetorial do símbolo real do logo
-  (carro cromado + brush-stroke da bandeira da Itália, em homenagem ao fundador
-  italiano da empresa).
-- `src/components/ui/SinceBadge.tsx` — reinterpretação da fita "SINCE 1997" do
-  site original como um emblema metálico estampado.
-- `src/components/ui/TricolorAccent.tsx` — friso verde/branco/vermelho, usado
-  com moderação (header, rodapé) como detalhe assinatura da marca.
+- `src/components/ui/BrandMark.tsx` — símbolo oficial (PNG transparente em
+  `public/brand/simbolo-pp.png`), não mais um desenho vetorial à mão.
+- `public/favicon.svg` — wrapper SVG com o mesmo símbolo embutido (recortado
+  em formato quadrado para uso como ícone de aba/app).
+- `src/components/ui/SinceBadge.tsx` — emblema metálico estampado "Desde 1997"
+  (elemento próprio do protótipo, não faz parte do board de marca).
+- `src/components/ui/TricolorAccent.tsx` — friso verde/branco/vermelho nos
+  hex oficiais, usado com moderação (header, rodapé).
 - `public/brand/selo-marca-brasil.png` — selo real do "Troféu Marca Brasil"
   baixado do site atual da empresa (não é um badge de prova social genérico).
+
+Cores (`tailwind.config.js`) e tipografia (Montserrat, 400–900) seguem os
+tokens do board — ver `personal-parts-brand-assets/Brand/paleta-de-cores.png`.
 
 ## Imagens: por que não há fotos reais
 

@@ -45,8 +45,8 @@ export function SocialProof() {
                     <Star
                       key={i}
                       className="h-4 w-4"
-                      fill={i < dep.nota ? '#e2001a' : 'none'}
-                      stroke={i < dep.nota ? '#e2001a' : '#3a3a43'}
+                      fill={i < dep.nota ? '#D71920' : 'none'}
+                      stroke={i < dep.nota ? '#D71920' : '#3a3a43'}
                     />
                   ))}
                 </div>

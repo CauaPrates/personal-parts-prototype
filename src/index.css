@@ -52,22 +52,6 @@
     @apply px-4 sm:px-6 lg:px-10;
   }
 
-  /* Wordmark cromado/metálico — usado no lugar de texto sólido branco/vermelho */
-  .text-chrome {
-    background-image: linear-gradient(
-      180deg,
-      #f2f4f7 0%,
-      #9aa0aa 35%,
-      #e8eaee 55%,
-      #6b7078 80%,
-      #c7cad1 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-  }
-
   /* Textura de alumínio escovado — fundo de "ficha técnica" para cards de categoria/peça */
   .bg-brushed-metal {
     background-color: theme('colors.ink.800');
